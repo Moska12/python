@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f2f2f2; /* Light background color */
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            background-color: #75A47F; /* Custom color for the navbar */
+        }
+        .navbar-dark .navbar-nav .nav-link {
+            color: white; /* Text color for navbar links */
+        }
+        .jumbotron {
+            background-color: #75A47F; /* Custom color for the jumbotron */
+            color: white; /* Text color for jumbotron */
+            padding: 100px 0;
+            margin-bottom: 0;
+        }
+        .jumbotron h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        .jumbotron p {
+            font-size: 1.5rem;
+        }
+        .container {
+            padding: 50px 0;
+        }
+        .library-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="/">Library</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Login</a> 
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/register">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/books">Books</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/users">Users</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/check-in/out">Check in/out</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/manage">Manage</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="jumbotron text-center">
+        <h1>Welcome to The Book Garden libraray: Imagines books as blooming flowers in a lush garden.</h1>
+        <p>This system helps you manage books, users, and check-in/check-out operations in a library.</p>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+               <img src="{{ url_for('static', filename='book-shelves.jpg') }}" alt="My Image" height="500" width="500"> </img> 
+
+            </div>
+            <div class="col-md-6">
+                <h2>About Us</h2>
+                <p>Cultivating Knowledge, Blooming Imagination
+                 At The Book Garden, we believe that every book is a seed waiting to sprout, every page a petal unfurling in the sunlight of curiosity. Nestled amidst ancient oaks and dew-kissed leaves, our library beckons you to wander its winding paths, where literary wonders bloom at every turn..</p>
+                <a href="/about" class="btn btn-primary">Learn More</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
