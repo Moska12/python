@@ -1,0 +1,71 @@
+/* General body styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Stylish, readable font */
+    background-color: #f4f4f9; /* Soft background color */
+    color: #333; /* Dark gray text color for readability */
+    padding: 20px; /* Padding around the content */
+}
+
+/* Centering the main header */
+h1 {
+    text-align: center; /* Centers the text of h1 */
+    color: #5a5a5a; /* Subtle dark gray color */
+}
+
+/* Styling for the forms */
+form {
+    margin-bottom: 20px; /* Space between forms */
+}
+
+label {
+    display: block; /* Display labels as blocks */
+    margin-bottom: 5px; /* Space below labels */
+}
+
+input[type="text"],
+input[type="password"],
+input[type="submit"] {
+    width: 100%; /* Full width input fields and buttons */
+    padding: 8px; /* Padding inside input fields and buttons */
+    margin-bottom: 10px; /* Space between input fields and buttons */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+input[type="submit"] {
+    background-color: #4caf50; /* Green submit button */
+    color: white; /* White text color */
+    border: none; /* No border */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Styling for the book availability table */
+table {
+    width: 100%; /* Full width table */
+    border-collapse: collapse; /* Removes the double border */
+    margin-bottom: 20px; /* Space below the table */
+}
+
+th, td {
+    padding: 10px; /* Padding inside each cell */
+    border: 1px solid #ddd; /* Light gray border for each cell */
+}
+
+th {
+    background-color: #4caf50; /* Green background for headers */
+    color: white; /* White text color */
+    font-size: 1.1em; /* Slightly larger text */
+    text-align: left; /* Align text to the left */
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Alternate row background color */
+}
+
+tr:hover {
+    background-color: #f0f0f0; /* Background color on row hover */
+}
+
