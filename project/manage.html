@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='manage.CSS') }}">
+
+
+    <title>Add Book</title>
+</head>
+<body>
+    <h1>Add New Book</h1>
+    <form action="/add_book" method="POST">
+        <label>Title:</label>
+        <input type="text" name="title"><br>
+        <label>Author:</label>
+        <input type="text" name="author"><br>
+        <label>langauge:</label>
+        <input type="text" name="langauge"><br>
+        <input type="submit" value="Add Book">
+    </form>
+
+    <h2>Mark Book as Checked Out</h2>
+    <form action="/mark_checked_out" method="POST">
+        <label for="book_id">Book ID:</label>
+        <input type="text" id="book_id" name="book_id"><br><br>
+        <label for="borrower_name">Borrower Name:</label>
+        <input type="text" id="borrower_name" name="borrower_name"><br><br>
+        <input type="submit" value="Mark as Checked Out">
+    </form>
+
+    <!-- Table for managing book availability -->
+    <h2>Manage Book Availability</h2>
+    <table>
+        <tr>
+            <th>Book Title</th>
+            <th>Author</th>
+            <th>Available</th>
+        </tr>
+        {% for book in books %}
+        <tr>
+            <td>{{ book.title }}</td>
+            <td>{{ book.author }}</td>
+            <td>{{ 'Yes' if book.available else 'No' }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
