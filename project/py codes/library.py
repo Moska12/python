@@ -1,72 +1,58 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 
-app = Flask(__name__, static_url_path='/static')
+app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///C:/Users/moska/PycharmProjects/pythonProject/instance/books.sqlite'
 db = SQLAlchemy(app)
 
-# Define your models
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(50), unique=True, nullable=False)
     password = db.Column(db.String(50), nullable=False)
 
-class Book(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(100), nullable=False)
-    author = db.Column(db.String(100), nullable=False)
-    language = db.Column(db.String(50))
-
 # Create all database tables inside an application context
 with app.app_context():
     db.create_all()
 
+# Route to display user list
+@app.route('/users')
+def user_list():
+    users = User.query.all()  # Fetch all users from the database
+    return render_template('user_list.html', users=users)
+
 @app.route('/')
 def home():
-    return render_template('home.html', image_file='book-shelves.jpg')
+    return render_template('home.html')
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        # Check if username already exists in the database
+        existing_user = User.query.filter_by(username=username).first()
+        if existing_user:
+            return 'Username already exists!'
+        # Create new user
+        new_user = User(username=username, password=password)
+        db.session.add(new_user)
+        db.session.commit()
+        return 'Registration successful!'
+    return render_template('register.html')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        # Process the login form data
         username = request.form['username']
         password = request.form['password']
-        # Add your login logic here
-        return redirect(url_for('home'))  # Redirect to home after successful login
+        # Check if username and password match a user in the database
+        user = User.query.filter_by(username=username, password=password).first()
+        if user:
+            return 'Login successful!'
+        else:
+            return 'Invalid username or password!'
     return render_template('login.html')
 
-# Route for the registration page
-@app.route('/register', methods=['GET', 'POST'])
-def register():
-    if request.method == 'POST':
-        # Process the registration form data
-        firstName = request.form['firstName']
-        lastName = request.form['lastName']
-        email = request.form['email']
-        username = request.form['username']
-        password = request.form['password']
-        # Add your registration logic here
-        return redirect(url_for('login'))  # Redirect to login after successful registration
-    return render_template('register.html')
-
-@app.route('/books')
-def books():
-    # Fetch all books from the database
-    books = Book.query.all()
-    return render_template('books.html', books=books)
-
-# Add Manage Books functionality
-@app.route('/manage_books', methods=['GET', 'POST'])
-def manage_books():
-    if request.method == 'POST':
-        title = request.form['title']
-        author = request.form['author']
-        language = request.form['language']
-        new_book = Book(title=title, author=author, language=language)
-        db.session.add(new_book)
-        db.session.commit()
-        return redirect(url_for('books'))
-    return render_template('manage_books.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
