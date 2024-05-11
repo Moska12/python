@@ -1,81 +1,65 @@
-<style>
-    body {
-        font-family: "Times New Roman", Times, serif;
-        font-size: 12px;
-    }
-
-    h1 {
-        font-size: 14px;
-    }
-</style>
-
 **Homepage**
 **Description:**
 
 The Homepage serves as the main landing page for the Library Management System. It provides users with an overview of the system's features and a welcoming message.
 Features:
-- Navigation Bar: Offers links to different sections of the library system, such as login, registration, book management, and more.
-- Welcoming Message: Displays a welcoming message along with a brief description of the library system, inviting users to explore its features.
-- Visual Content: Includes an image related to the library to enhance visual appeal and engagement.
-- Information Section: Presents additional information about the library system, enticing users to learn more about its offerings.
 
-**Usage:**
-1. Access: Navigate to the Homepage by visiting the root URL (/) in the web browser.
-2. Explore Features: Utilize the navigation bar to explore different sections of the library system, such as login, registration, and book management.
-3. Read Information: Read the welcoming message and additional information provided on the homepage to gain insights into the library system's purpose and offerings.
+Navigation Bar: Offers links to different sections of the library system, such as login, registration, book management, and more.
+Welcoming Message: Displays a welcoming message along with a brief description of the library system, inviting users to explore its features.
+Visual Content: Includes an image related to the library to enhance visual appeal and engagement.
+Information Section: Presents additional information about the library system, enticing users to learn more about its offerings.
+Usage:
 
----
-
-**Registration Page**
-**Description:**
+Access: Navigate to the Homepage by visiting the root URL (/) in the web browser.
+Explore Features: Utilize the navigation bar to explore different sections of the library system, such as login, registration, and book management.
+Read Information: Read the welcoming message and additional information provided on the homepage to gain insights into the library system's purpose and offerings.
+Registration Page
+Description:
 
 The Registration Page allows users to sign up for access to the library system by providing their personal information and creating a username and password.
 Features:
-- Input Fields: Provides input fields for users to enter their first name, last name, email, username, and password.
-- Form Submission: Utilizes a form submission mechanism to send user registration details securely to the server.
-- Validation: Enforces required field validation to ensure that all necessary information is provided before submission.
 
-**Usage:**
-1. Access: Navigate to the Registration Page by entering its URL in the web browser.
-2. Enter Details: Fill out the registration form by entering your first name, last name, email, username, and password into the respective input fields.
-3. Submission: Click the "Register" button to submit the form and create a new user account.
-4. Validation: Ensure that all required fields are filled out correctly. Any missing or incorrectly entered information will trigger validation errors.
+Input Fields: Provides input fields for users to enter their first name, last name, email, username, and password.
+Form Submission: Utilizes a form submission mechanism to send user registration details securely to the server.
+Validation: Enforces required field validation to ensure that all necessary information is provided before submission.
+Usage:
 
----
-
-**Login Page**
-**Description:**
+Access: Navigate to the Registration Page by entering its URL in the web browser.
+Enter Details: Fill out the registration form by entering your first name, last name, email, username, and password into the respective input fields.
+Submission: Click the "Register" button to submit the form and create a new user account.
+Validation: Ensure that all required fields are filled out correctly. Any missing or incorrectly entered information will trigger validation errors.
+Login Page
+Description:
 
 The Login Page allows users to authenticate themselves by entering their username and password. It serves as the entry point for accessing the library management system.
 Features:
-- Input Fields: Provides input fields for entering the username and password.
-- Form Submission: Utilizes a form submission mechanism to send user credentials securely to the server for authentication.
-- Validation: Enforces required field validation to ensure that both username and password are provided before submission.
 
-**Usage:**
-1. Access: Navigate to the Login Page by entering its URL in the web browser.
-2. Enter Credentials: Input your username and password into the respective fields.
-3. Submission: Click the "Login" button to submit the form and authenticate yourself.
-4. Authentication: Upon submission, the entered credentials are sent to the server for authentication. If valid, the user is granted access to the system.
+Input Fields: Provides input fields for entering the username and password.
+Form Submission: Utilizes a form submission mechanism to send user credentials securely to the server for authentication.
+Validation: Enforces required field validation to ensure that both username and password are provided before submission.
+Usage:
 
----
-
-**Manage Section**
-**Description:**
+Access: Navigate to the Login Page by entering its URL in the web browser.
+Enter Credentials: Input your username and password into the respective fields.
+Submission: Click the "Login" button to submit the form and authenticate yourself.
+Authentication: Upon submission, the entered credentials are sent to the server for authentication. If valid, the user is granted access to the system.
+Manage Section
+Description:
 
 The Manage Section provides functionality for managing books within the library system. It includes features such as adding new books, marking books as checked out, and managing book availability.
 Features:
-- Add New Book: Allows librarians to add new books to the library system by providing details such as title, author, and language.
-- Mark Book as Checked Out: Enables librarians to mark books as checked out by specifying the book ID and borrower name.
-- Manage Book Availability: Displays a table for managing the availability of books, indicating whether each book is currently available for checkout.
 
-**Usage:**
-1. Add New Book:
-   - Enter the title, author, and language of the book into the respective input fields.
-   - Click the "Add Book" button to add the book to the library system.
-2. Mark Book as Checked Out:
-   - Enter the book ID and borrower name into the respective input fields.
-   - Click the "Mark as Checked Out" button to update the book's status.
-3. Manage Book Availability:
-   - View the table displaying the title, author, and availability status of each book.
-   - Books marked as "Yes" are available, while those marked as "No" are currently checked out.
+Add New Book: Allows librarians to add new books to the library system by providing details such as title, author, and language.
+Mark Book as Checked Out: Enables librarians to mark books as checked out by specifying the book ID and borrower name.
+Manage Book Availability: Displays a table for managing the availability of books, indicating whether each book is currently available for checkout.
+Usage:
+
+Add New Book:
+Enter the title, author, and language of the book into the respective input fields.
+Click the "Add Book" button to add the book to the library system.
+Mark Book as Checked Out:
+Enter the book ID and borrower name into the respective input fields.
+Click the "Mark as Checked Out" button to update the book's status.
+Manage Book Availability:
+View the table displaying the title, author, and availability status of each book.
+Books marked as "Yes" are available, while those marked as "No" are currently checked out.
