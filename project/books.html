@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Books List</title>
+    <style>
+        /* General body styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Stylish, readable font */
+            background-color: #f4f4f9; /* Soft background color */
+            color: #333; /* Dark gray text color for readability */
+            padding: 20px; /* Padding around the content */
+        }
+
+        /* Centering the main header */
+        h1 {
+            text-align: center; /* Centers the text of h1 */
+            color: #75A47F; /* Subtle dark gray color */
+        }
+
+        /* Styling for the table */
+        table {
+            width: 80%; /* Set table width */
+            margin: 0 auto; /* Center the table horizontally */
+            border-collapse: collapse; /* Removes the double border */
+        }
+
+        th, td {
+            padding: 12px 15px; /* Padding inside each cell */
+            border: 1px solid #ddd; /* Light gray border for each cell */
+            text-align: left; /* Text align to the left */
+        }
+
+        th {
+            background-color: #75A47F; /* Deep blue background for headers */
+            color: #ffffff; /* White text color */
+            font-size: 1.1em; /* Slightly larger text */
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: #BACD92; /* Light purple background for odd rows */
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #FCFFE0; /* Slightly darker purple for even rows */
+        }
+
+        tbody tr:hover {
+            background-color: #FCFFE0; /* Change background on row hover */
+        }
+
+        /* Adding a shadow effect to the table for depth */
+        table {
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1); /* Shadow to make the table pop out */
+        }
+    </style>
+</head>
+<body>
+    <h1>Books List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Author</th>
+                <th>Language</th>
+                <th>Title</th>
+            </tr>
+        </thead>
+        
+            <tbody>
+            {% for book in books %}
+            <tr>
+                <td>{{ book['id'] }}</td>
+                <td>{{ book['author'] }}</td>
+                <td>{{ book['language'] }}</td>
+                <td>{{ book['title'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        
+          
+    </table>
+   
+</body>
+</html>
+        
+    
